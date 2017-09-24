@@ -1,0 +1,58 @@
+$gray-lighter: #bbb;
+$strong-green: #3cac94;
+$white: #fff;
+
+.authen-box {
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px $gray-lighter;
+  margin: 45px auto;
+  width: 400px;
+
+  textarea {
+    height: 85px !important;
+    margin-bottom: 20px;
+    resize: vertical;
+  }
+
+  h2 {
+    background-color: $strong-green;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: $white;
+    padding: 15px;
+  }
+
+  .content {
+    font-size: 1.1em;
+    padding: 15px;
+
+    label, input {
+      font-size: 1.1em;
+    }
+
+    .redirect-to-link {
+      a{
+        color: $strong-green;
+
+        &:hover {
+          color: $strong-green;
+        }
+      }
+      margin-bottom: 20px;
+      margin-top: 5px;
+    }
+
+    input[type=submit] {
+      background-color: $strong-green;
+      border: 0;
+      border-radius: 5px;
+      color: $white;
+      padding: 10px;
+      width: 100%;
+    }
+  }
+}
+
+.edit-box {
+  width: 580px;
+}

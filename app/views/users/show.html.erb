@@ -1,0 +1,22 @@
+<div class="container user-profile">
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="avatar">
+        <%= image_tag "default-ava/ava-default-male.jpg" %>
+      </div>
+    </div>
+    <div class="col-xs-8">
+      <div class="name-express">
+        <div class="name"><%= @user.name %></div>
+        <div class="config-area">
+          <%= link_to "Edit profile", edit_user_registration_path, id: "edit-profile-btn" %>
+        </div>
+      </div>
+      <div class="user-info-express">
+        <div class="self-intro">
+          <strong>Self intro:</strong><%= @user.intro %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
