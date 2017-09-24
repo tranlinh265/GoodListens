@@ -1,0 +1,153 @@
+//
+// This is a manifest file that'll be compiled into application.css, which will include all the files
+// listed below.
+//
+// Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+// vendor/assets/stylesheets directory can be referenced here using a relative path.
+//
+// You're free to add application-wide styles to this file and they'll appear at the bottom of the
+// compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+// files in this directory. Styles in this file should be added after the last require_* statement.
+// It is generally better to create a new file per style scope.
+//
+//= require_tree .
+//= require_self
+//= require font-awesome
+//
+
+@import "font-awesome";
+@import "materialize";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,300,500');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+$strongGreen: #3cac94;
+
+nav{
+	background-color: $strongGreen;
+	margin-bottom: 5px;
+	a.brand-logo{
+		font-size: 2em;
+		margin-left: 20px;
+		font-family: 'Pacifico', cursive;
+		text-decoration: none;
+		&:hover{
+			color: white;
+		}
+		.fa{
+			margin-right: 10px;
+		}
+	}
+	ul{
+		a{
+			padding: 0 20px;
+			font-size: 1.1em;
+			text-decoration: none;
+			&:hover{
+				color: white;
+				text-decoration: none;
+			}
+		}
+	}
+	form{
+		display: inline-block;
+		.search-box{
+			background-image: url('/assets/searchicon.png');
+			background-repeat: no-repeat;
+			background-position: 8px 3px;
+			border: 1px solid white;
+			border-radius: 5px;
+			background-color: white;
+			padding: 2px 8px 2px 35px;
+			width: 140px;
+			margin-left: 530px;
+			height: 25px;
+			color: black;
+			font-size: 1.1em;
+			transition: width .4s ease-in-out;
+			&:focus{
+				width: 230px;
+			}
+		}
+	}
+	input[type=text]:focus:not([readonly]){
+		border-bottom: none;
+		border: 1px solid white;
+		box-shadow: none;
+	}
+	.glyphicon{
+		font-size: 1.2em;
+	}
+	.dropdown-menu{
+		left: -55px;
+		width: 100px;
+		min-width: 80px;
+		li{
+			width: 100%;
+		}
+	}
+	.notifi-dropdown{
+		min-width: 430px;
+		left: -280px;
+		padding: 0;
+		li{
+			a{
+				padding: 0;
+				display: flex;
+				align-items: center;
+				width: 100%;
+				word-wrap: break-word;
+				img{
+					width: 55px;
+					height: 55px;
+					margin-right: 8px;
+				}
+				.notifi-content{
+					word-wrap: break-word;
+					width: calc(100% - 185px);
+					white-space: normal;
+				}
+				.notifi-time{
+					color: #999999;
+					width: 140px;
+					text-align: right;
+				}
+				&:hover{
+					background-color: transparent;
+				}
+			}
+			line-height: 1;
+			color: black;
+			display: inline-block;
+			padding: 15px 15px;
+			border: 1px solid #f1f1f1;
+			border-left: none;
+			border-right: none;
+			&:hover{
+				background-color: #f5f5f5;
+				transition: background-color .3s ease;
+			}
+		}
+		li.unread{
+			background-color: #e7ecf5;
+		}
+	}
+}
+
+footer.page-footer {
+  background-color: $strongGreen;
+  color: white;
+
+	.title {
+		font-weight: bold;
+		font-size: 1.5em;
+	}
+
+  .fa {
+		margin-right: 10px;
+	}
+}
