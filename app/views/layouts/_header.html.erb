@@ -1,11 +1,6 @@
 <nav>
   <div class="nav-wrapper">
     <a href="/" class="brand-logo"><%= fa_icon "music" %> | GoodListens</a>
-    <% if user_signed_in? %>
-      <%= form_tag users_path, method: "get", class: "users-search" do %>
-        <%= text_field_tag :search, params[:search], class: "search-box", placeholder: "Search..." %>
-      <% end %>
-    <% end %>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <% if user_signed_in? %>
         <li>
@@ -18,8 +13,8 @@
             <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
-            <li><%= link_to "Settings", edit_user_registration %></li>
-            <li><%= link_to "Log out", destroy_user_session, method: "delete" %></li>
+            <li><%= link_to "Settings", edit_user_registration_path %></li>
+            <li><%= link_to "Log out", destroy_user_session_path, method: "delete" %></li>
           </ul>
         </li>
       <% else %>
