@@ -14,6 +14,7 @@ gem "materialize-sass"
 gem "bootstrap-sass", "3.3.6"
 gem "jquery-rails"
 gem "turbolinks", "~> 5"
+gem 'faker', '~>1.8.4'
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
