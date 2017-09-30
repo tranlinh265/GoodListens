@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show]
   resources :songs, only: [:index,:show]
+  resources :reviews, only: [:create]
 end

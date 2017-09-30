@@ -133,16 +133,13 @@
     label {
     	font-size: 1.5em;
     }
-    .close_form {
+    span .close_form {
     	text-align: right;
     	//???
     }
-    #btn_submit {
-    	margin-left: 200px;
+    .btn {
+    	margin: auto;
     	//khong dung auto margin dk???
 
     }
-    input[type="text"] {
-    	font-size:1em;
-	}
 }

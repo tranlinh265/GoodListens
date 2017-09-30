@@ -11,7 +11,23 @@
 				<h4>Rate</h4>
 			</div>
 		</div>
-		<button type="button" class="btn btn-primary" id = "add_review">Review this song</button>
+		<% if user_signed_in? %>
+			<button type="button" class="btn btn-primary" id = "add_review">Review this song</button>
+			<div class="review_form">
+				<div class="review_form_content">
+					<span class="close_form">&times;</span>
+					<%= form_for(Review.new , url: reviews_path,method: :post) do |f| %>
+						<%= f.label :title %>
+						<%= f.text_field :title %>
+						<%= f.label :content %>
+						<%= f.text_area :content,  :rows => 5  %>
+						<%= f.hidden_field :song_id, :value  => @song.id %>
+						<%= f.hidden_field :user_id, :value => current_user.id %>
+						<%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+		          	<% end %>
+				</div>
+			</div>
+		<% end %>
 	</div>
 </div>
 <div class="review_content">
@@ -20,19 +36,4 @@
 		<%= render  @reviews %>
 	<% end %> 
 </div>
-<div class="modifed_outer">
-	<div class="review_form">
-		<div class="review_form_content">
-			<span class="close_form">&times;</span>
-			<div class="form-group">
-			 	<label for="usr">Title:</label>
-			 	<input type="text" class="form-control" id="usr"/>
-			</div>
-			<div class="form-group">
-				<label for="comment">Review:</label>
-				<textarea class="form-control" rows="5" id="comment"></textarea>
-			</div>
-			<button type="button" class="btn btn-primary" id="btn_submit">Submit</button>
-		</div>
-	</div>
-</div>
+	

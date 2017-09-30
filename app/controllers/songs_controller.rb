@@ -5,6 +5,6 @@ class SongsController < ApplicationController
 
   def show
   	@song = Song.find(params[:id])
-  	@reviews = @song.review
+  	@reviews = @song.review.order(created_at: :desc)
   end
 end
