@@ -19,7 +19,7 @@ random = Random.new
 end
 
 200.times do |n|
-	title = Faker::Music.key
+	title = Faker::Book.title
 	desc = "This is description for #{title}."
 	author = Faker::Name.name
 	category_id = random.rand(10)
@@ -30,14 +30,16 @@ end
 end
 
 Song.all.each do |s|
-	title = Faker::Book.title
-	content = Faker::HarryPotter.quote
-	user_id = User.find(random.rand(1..50))
-	Review.create!( title: title,
-		content: content,
-		user_id: user_id,
-		song_id: s.id
-		)
+	10.times do |x|
+		title = Faker::Book.title
+		content = Faker::HarryPotter.quote
+		user_id = User.find(random.rand(1..50)).id
+		Review.create!( title: title,
+			content: content,
+			user_id: user_id,
+			song_id: s.id
+			)
+	end
 end
 
 50.times do |x|
@@ -46,7 +48,7 @@ end
 end
 
 Song.all.each do |s|
-	id = Singer.find(random.rand(1..30))
+	id = Singer.find(random.rand(1..30)).id
 	SongSinger.create!( singer_id: id,
 		song_id: s.id
 		)

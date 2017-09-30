@@ -1,3 +1,148 @@
 // Place all the styles related to the Songs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// #81D4FA icon color
+.song_index {
+	width: 50%;
+	margin-left: 200px;
+	border-bottom: 1px solid gray;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+	h5 {
+		margin-left: 15px;
+	}
+	.song_element {
+	position: relative;
+	margin-left: 150px;
+	}
+
+	#song_cover_img {
+		position: absolute;
+		left: -150px;
+	}
+}
+
+
+.song_detail {
+	width: 70%;
+	margin-left: 200px;
+	margin-top: 20px;
+	padding: 10px;
+	padding-bottom: 20px;
+
+	h4 {
+		margin-left: 15px;
+	}
+
+	.song_content {
+	position: relative;
+	margin-left: 175px;
+	}
+
+	#song_cover_img {
+		position: absolute;
+		left: -175px;
+	}
+}
+
+.review_content {
+	background-color: #eee;
+	margin: 15px;
+	padding: 10px;
+	border-radius: 7px;
+}
+
+.review_detail {
+	background-color: white;
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 15px;
+	.review_author {
+		border-bottom: 1px solid #EEEEEE;
+		#review_author {
+			position: relative;
+			margin-left: 75px;
+
+			h5 {
+				padding-left: 10px;
+			}
+
+		}
+		.img_author {
+			border-radius: 50%;
+			position: absolute;
+			left: -75px;
+		}
+	}
+	.review_articles {
+		margin-top: 20px;
+		margin-left: 30px;
+	}
+	.action_box {
+		margin-top: 10px;
+		margin-left: 30px;
+		color: #757575;
+		div {
+			line-height: 150%;
+			margin-right: 15px;
+			display: inline;
+		}
+		img {	
+				display: inline-block;
+				vertical-align: top;
+				transform: translateZ(0);
+				box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+				backface-visibility: hidden;
+				-moz-osx-font-smoothing: grayscale;
+				transition-duration: 0.3s;
+				transition-property: transform;
+				transition-timing-function: ease-out;
+			}
+		span:hover {
+			color: #4FC3F7;
+			img {
+				transform: translateY(-8px);
+			}
+		}
+	}
+}
+.review_form {
+	display: none;
+    position: fixed;
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4);
+    padding-bottom:0;
+   
+}
+.review_form_content {
+    /*background-color: #E1F5FE;*/
+    margin: auto;
+    padding: 20px;
+    width: 40%;
+    background-color: white;
+    border-radius: 10px;
+    max-height: 80%;
+
+    label {
+    	font-size: 1.5em;
+    }
+    .close_form {
+    	text-align: right;
+    	//???
+    }
+    #btn_submit {
+    	margin-left: 200px;
+    	//khong dung auto margin dk???
+
+    }
+    input[type="text"] {
+    	font-size:1em;
+	}
+}

@@ -1,2 +1,38 @@
-<h1>Songs#show</h1>
-<p>Find me in app/views/songs/show.html.erb</p>
+<div class="song_detail">
+	<div class="song_content">
+		<div id="song_cover_img">
+			<%= image_tag("default_song" , :size => "130x130") %>
+		</div>
+		<div>
+			<%= @text ="<h2>#{@song.title}</h2>".html_safe %>
+			<%= @text = "<h4>Singer: #{@song.singer.name}</h4>".html_safe %>
+			<h4>Category: ...</h4>
+			<div>
+				<h4>Rate</h4>
+			</div>
+		</div>
+		<button type="button" class="btn btn-primary" id = "add_review">Review this song</button>
+	</div>
+</div>
+<div class="review_content">
+	<h2><strong>Review from users</strong></h2>
+	<% if @reviews.any? %>
+		<%= render  @reviews %>
+	<% end %> 
+</div>
+<div class="modifed_outer">
+	<div class="review_form">
+		<div class="review_form_content">
+			<span class="close_form">&times;</span>
+			<div class="form-group">
+			 	<label for="usr">Title:</label>
+			 	<input type="text" class="form-control" id="usr"/>
+			</div>
+			<div class="form-group">
+				<label for="comment">Review:</label>
+				<textarea class="form-control" rows="5" id="comment"></textarea>
+			</div>
+			<button type="button" class="btn btn-primary" id="btn_submit">Submit</button>
+		</div>
+	</div>
+</div>

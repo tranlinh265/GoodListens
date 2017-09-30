@@ -30,4 +30,19 @@ $(document).on('ready page:load', function(){
       });
     }
   });
+  //Add review
+  $( "#add_review" ).on( "click", function() {
+    console.log("hello");
+    $(".review_form").css("display", "block");
+  });
+  $(".close_form").click(function(){
+    var curr = $(this).parentsUntil(".review_form").parent(".review_form")
+    curr.css("display", "none");
+  });
+  $(".review_form").on('click',function(event) {
+          $(".review_form").css("display", "none");
+  }).on('click','.review_form_content',function(e){
+    e.stopPropagation();
+  });
+
 });
