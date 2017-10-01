@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'reviews/index'
-
-  get 'songs/index'
-
-  get 'songs/show'
 
   root "static_pages#home"
   devise_for :users

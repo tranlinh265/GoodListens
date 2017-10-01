@@ -1,5 +1,5 @@
 <div>
-	<% if @songs.represent? %>
+	<% if @songs.any? %>
 		<%= render @songs %>
 	<% else %>
 		<%= @text ="<h2>Song isn't available</h2>".html_safe %>

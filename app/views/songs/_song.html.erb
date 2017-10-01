@@ -10,7 +10,12 @@
 			<%= @text = "<h5><strong>Singer: </strong>#{song.singer.name}</h5>".html_safe %>
 			<h5><strong>Category: </strong>...</h5>
 			<div>
-				<h5><strong>Rate:</strong></h5>
+				<h5>
+					<strong>Rate: </strong>
+					<span>
+						<%= render "shared/song_avg_rate", rate_avg: song.rate_avg %>
+					</span>
+				</h5>
 			</div>
 		</div>
 	</div>
