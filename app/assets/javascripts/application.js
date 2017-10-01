@@ -17,7 +17,7 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).on('ready page:load', function(){
+$(document).on('turbolinks:load', function(){
     console.log("hello");
 
   $('a.internal_link').on('click', function(event) {

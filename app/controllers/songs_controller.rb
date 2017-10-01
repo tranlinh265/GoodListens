@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
   def index
-  	@songs = Song.all
+  	@songs = Song.all.order(rate_avg: :desc).paginate page: params[:page], :per_page => 10
   end
 
   def show
