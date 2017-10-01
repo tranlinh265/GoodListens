@@ -19,25 +19,32 @@ random = Random.new
 end
 
 200.times do |n|
-	title = Faker::Music.key
+	title = Faker::Book.title
 	desc = "This is description for #{title}."
 	author = Faker::Name.name
 	category_id = random.rand(10)
 	Song.create!(title: title,
 		description: desc,
 		author_name: author,
-		category_id: category_id)
+		category_id: category_id,
+				 sum_rate: 0,
+				 rate_avg: 0)
 end
 
 Song.all.each do |s|
-	title = Faker::Book.title
-	content = Faker::HarryPotter.quote
-	user_id = User.find(random.rand(1..50))
-	Review.create!( title: title,
-		content: content,
-		user_id: user_id,
-		song_id: s.id
-		)
+	10.times do |x|
+		title = Faker::Book.title
+		content = Faker::HarryPotter.quote
+		user_id = User.find(random.rand(1..50)).id
+		rate_rv = random.rand(0..5)
+		Review.create!( title: title,
+			content: content,
+			user_id: user_id,
+			song_id: s.id,
+			rate_score: rate_rv
+			)
+		s.update_attributes( :rate_avg => ((s.sum_rate*s.rate_avg + rate_rv)/(s.sum_rate + 1)), :sum_rate => (s.sum_rate + 1))
+	end
 end
 
 50.times do |x|
@@ -46,7 +53,7 @@ end
 end
 
 Song.all.each do |s|
-	id = Singer.find(random.rand(1..30))
+	id = Singer.find(random.rand(1..30)).id
 	SongSinger.create!( singer_id: id,
 		song_id: s.id
 		)

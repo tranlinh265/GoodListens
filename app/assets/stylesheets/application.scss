@@ -13,7 +13,8 @@
 //= require_tree .
 //= require_self
 //= require font-awesome
-//
+
+
 
 @import "font-awesome";
 @import "materialize";
@@ -28,30 +29,62 @@
 $strongGreen: #3cac94;
 
 nav{
-	background-color: $strongGreen;
+	background-color: white;
 	margin-bottom: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	
+	.img_user {
+		border-radius: 50%;
+	}
 	a.brand-logo{
 		font-size: 2em;
 		margin-left: 20px;
 		font-family: 'Pacifico', cursive;
 		text-decoration: none;
+		color: #00a63f;
 		&:hover{
-			color: white;
+			color: #00ff62;
 		}
 		.fa{
 			margin-right: 10px;
 		}
 	}
-	ul{
-		a{
+	ul{ 
+		a{	
+			line-height: 1.8;
+			font-weight: bold;
+			font-family: Arial;
 			padding: 0 20px;
-			font-size: 1.1em;
+			font-size: 1.5em;
 			text-decoration: none;
-			&:hover{
-				color: white;
+			margin-top: 10px;
+			color: #00a63f;
+			//change
+			&:after {
+				content: '';
+				display: block;
+				margin: auto;
+				height: 3px;
+				width: 0px;
+				margin-bottom: 10px;
+				background: transparent;
+				transition: width .5s ease, background-color .5s ease;
+			}
+			&:hover:after{
+				width: 100%;
+			    background: linear-gradient(to right, #e6ffef 0%, #00a63f 50%, #e6ffef 100%);
+			}
+			&:hover {
+				color: #00a63f;
 				text-decoration: none;
+				background: transparent;
 			}
 		}
+		#active:after{
+				width: 100%;
+			    background: linear-gradient(to right, #e6ffef 0%, #00a63f 50%, #e6ffef 100%);
+			}
 	}
 	form{
 		display: inline-block;
@@ -84,9 +117,10 @@ nav{
 	}
 	.dropdown-menu{
 		left: -55px;
-		width: 100px;
+		max-width: 150px;
 		min-width: 80px;
-		li{
+		text-align: center;
+		li {
 			width: 100%;
 		}
 	}
@@ -150,4 +184,9 @@ footer.page-footer {
   .fa {
 		margin-right: 10px;
 	}
+}
+.pagination {
+	margin-top: 20px;
+	margin-bottom: 30px;
+	margin-left: 400px;
 }

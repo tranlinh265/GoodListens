@@ -4,7 +4,8 @@ class CreateSongs < ActiveRecord::Migration[5.1]
       t.string :title
       t.string :description
       t.string :author_name
-      t.float :sum_rate
+      t.integer :sum_rate
+      t.float :rate_avg
       t.integer :category_id
       #chua add column photo vs song file
       t.timestamps

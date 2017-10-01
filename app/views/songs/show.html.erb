@@ -1,2 +1,57 @@
-<h1>Songs#show</h1>
-<p>Find me in app/views/songs/show.html.erb</p>
+<div class="song_detail">
+	<div class="song_content">
+		<div id="song_cover_img">
+			<%= image_tag("default_song" , :size => "130x130") %>
+		</div>
+		<div>
+			<%= @text ="<h2>#{@song.title}</h2>".html_safe %>
+			<%= @text = "<h4>Singer: #{@song.singer.name}</h4>".html_safe %>
+			<h4>Category: ...</h4>
+			<div>
+				<h4>Rating : 
+					<% case @song.rate_avg.to_i %>
+					<% when 1 %>
+						<%= 'Poor'%>
+					<% when 2 %>
+						<%= 'Fair'%>
+					<% when 3 %>
+						<%= 'Good'%>
+					<% when 4 %>
+						<%= 'Excellent'%>
+					<% when 5 %>
+						<%= 'Perfect'%>
+					<% end %>
+					<span>
+						<%= render "shared/song_avg_rate", rate_avg: @song.rate_avg %>
+					</span>
+				</h4>
+			</div>
+		</div>
+		<% if user_signed_in? %>
+			<button type="button" class="btn btn-primary" id = "add_review">Review this song</button>
+			<div class="review_form">
+				<div class="review_form_content">
+					<span class="close_form">&times;</span>
+					<%= form_for(Review.new , url: reviews_path,method: :post) do |f| %>
+						<%= f.label :title %>
+						<%= f.text_field :title %>
+						<%= f.label :content %>
+						<%= f.text_area :content,  :rows => 5  %>
+						<%= f.hidden_field :song_id, :value  => @song.id %>
+						<%= f.hidden_field :user_id, :value => current_user.id %>
+						<%= render "shared/new_review_rate" %>
+						<%= f.hidden_field :rate, :value => 0, :id => 'rate_value' %>
+						<%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+		          	<% end %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>
+<div class="review_content">
+	<h2><strong>Review from users</strong></h2>
+	<% if @reviews.any? %>
+		<%= render  @reviews %>
+	<% end %> 
+</div>
+	
