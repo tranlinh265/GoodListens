@@ -50,14 +50,6 @@ ActiveRecord::Schema.define(version: 20170930084325) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "rates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.integer "review_id"
-    t.integer "song_id"
-    t.float "point", limit: 24
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer "followed_id"
     t.integer "follower_id"
@@ -70,6 +62,7 @@ ActiveRecord::Schema.define(version: 20170930084325) do
     t.string "content"
     t.integer "user_id"
     t.integer "song_id"
+    t.integer "rate_score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -91,7 +84,8 @@ ActiveRecord::Schema.define(version: 20170930084325) do
     t.string "title"
     t.string "description"
     t.string "author_name"
-    t.float "sum_rate", limit: 24
+    t.integer "sum_rate"
+    t.float "rate_avg", limit: 24
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

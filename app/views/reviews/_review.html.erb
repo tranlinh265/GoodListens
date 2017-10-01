@@ -10,6 +10,9 @@
                 	</h4></strong>
                 	<h5>
                 		<%= review.created_at %>
+                        <div class="rating">
+                            <%= render "shared/song_avg_rate", rate_avg: review.rate_score %>
+                        </div>
                 	</h5>
                 </div>
         	</div>

@@ -8,7 +8,23 @@
 			<%= @text = "<h4>Singer: #{@song.singer.name}</h4>".html_safe %>
 			<h4>Category: ...</h4>
 			<div>
-				<h4>Rate</h4>
+				<h4>Rating : 
+					<% case @song.rate_avg.to_i %>
+					<% when 1 %>
+						<%= 'Poor'%>
+					<% when 2 %>
+						<%= 'Fair'%>
+					<% when 3 %>
+						<%= 'Good'%>
+					<% when 4 %>
+						<%= 'Excellent'%>
+					<% when 5 %>
+						<%= 'Perfect'%>
+					<% end %>
+					<span>
+						<%= render "shared/song_avg_rate", rate_avg: @song.rate_avg %>
+					</span>
+				</h4>
 			</div>
 		</div>
 		<% if user_signed_in? %>
@@ -23,6 +39,8 @@
 						<%= f.text_area :content,  :rows => 5  %>
 						<%= f.hidden_field :song_id, :value  => @song.id %>
 						<%= f.hidden_field :user_id, :value => current_user.id %>
+						<%= render "shared/new_review_rate" %>
+						<%= f.hidden_field :rate, :value => 0, :id => 'rate_value' %>
 						<%= f.submit "Submit", class: "btn btn-large btn-primary" %>
 		          	<% end %>
 				</div>

@@ -63,11 +63,16 @@
 		#review_author {
 			position: relative;
 			margin-left: 75px;
-
+			margin-right: 100px;
 			h5 {
 				padding-left: 10px;
 			}
 
+		}
+		.rating {
+			position: absolute;
+			right: -75px;
+			display: inline;
 		}
 		.img_author {
 			border-radius: 50%;
@@ -142,4 +147,45 @@
     	//khong dung auto margin dk???
 
     }
+}
+//---------
+.rating-stars ul {
+  list-style-type:none;
+  padding:0;
+  
+  -moz-user-select:none;
+  -webkit-user-select:none;
+}
+.rating-stars ul > li.star {
+  display:inline-block;
+}
+
+/* Idle State of the stars */
+.rating-stars ul > li.star > i.fa {
+  font-size:2.5em; /* Change the size of the stars */
+  color:#ccc; /* Color on idle state */
+}
+
+/* Hover state of the stars */
+.rating-stars ul > li.star.hover > i.fa {
+  color:#FFCC36;
+}
+
+/* Selected state of the stars */
+.rating-stars ul > li.star.selected > i.fa {
+  color:#FF912C;
+}
+
+.rate_avg {
+	display:inline-block;
+
+	.fill_star:first-child {
+		margin-left: 20px;
+	}
+	.fill_star > i.fa {
+		color:#ffbf00;
+	}
+}
+.rate_avg ul > li {
+  display:inline-block;
 }
