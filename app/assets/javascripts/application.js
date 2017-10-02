@@ -82,6 +82,6 @@ $(document).on('turbolinks:load', function(){
     var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
     $('#rate_value').val(ratingValue)
   });
-  
+
 
 });

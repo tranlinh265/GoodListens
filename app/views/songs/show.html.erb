@@ -31,7 +31,7 @@
 			<button type="button" class="btn btn-primary" id = "add_review">Review this song</button>
 			<div class="review_form">
 				<div class="review_form_content">
-					<span class="close_form">&times;</span>
+					<div class="close_form"><span class="fa fa-times"></span></div><br>
 					<%= form_for(Review.new , url: reviews_path,method: :post) do |f| %>
 						<%= f.label :title %>
 						<%= f.text_field :title %>
