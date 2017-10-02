@@ -190,3 +190,20 @@ footer.page-footer {
 	margin-bottom: 30px;
 	margin-left: 400px;
 }
+
+#review_title{
+  font-size: 18px;
+}
+
+.close_form:hover{
+  cursor: pointer;
+}
+
+.like-song{
+  font-size: 18px;
+}
+
+.like-song .fa:hover{
+  color: rgb(88, 144, 255);
+  cursor: pointer;
+}
