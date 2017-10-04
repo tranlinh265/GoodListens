@@ -14,12 +14,13 @@
 //= require_self
 //= require font-awesome
 
-
-
 @import "font-awesome";
 @import "materialize";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "froala_editor.min";
+@import "froala_style.min";
+@import 'plugins/image.min.css';
 
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
@@ -27,64 +28,37 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 $strongGreen: #3cac94;
+$gray-lighter: #f7f7f7;
+
+body {
+	background-color: $gray-lighter;
+}
 
 nav{
-	background-color: white;
-	margin-bottom: 5px;
-	padding-left: 20px;
-	padding-right: 20px;
-	
-	.img_user {
-		border-radius: 50%;
-	}
+	background-color: $strongGreen;
+
 	a.brand-logo{
 		font-size: 2em;
 		margin-left: 20px;
 		font-family: 'Pacifico', cursive;
 		text-decoration: none;
-		color: #00a63f;
 		&:hover{
-			color: #00ff62;
+			color: white;
 		}
 		.fa{
 			margin-right: 10px;
 		}
 	}
-	ul{ 
-		a{	
-			line-height: 1.8;
-			font-weight: bold;
-			font-family: Arial;
+	ul{
+		a{
 			padding: 0 20px;
-			font-size: 1.5em;
+			font-size: 1.1em;
 			text-decoration: none;
-			margin-top: 10px;
-			color: #00a63f;
-			//change
-			&:after {
-				content: '';
-				display: block;
-				margin: auto;
-				height: 3px;
-				width: 0px;
-				margin-bottom: 10px;
-				background: transparent;
-				transition: width .5s ease, background-color .5s ease;
-			}
-			&:hover:after{
-				width: 100%;
-			    background: linear-gradient(to right, #e6ffef 0%, #00a63f 50%, #e6ffef 100%);
-			}
-			&:hover {
-				color: #00a63f;
+			&:hover{
+				color: white;
 				text-decoration: none;
-				background: transparent;
 			}
 		}
-		#active:after{
-				width: 100%;
-			    background: linear-gradient(to right, #e6ffef 0%, #00a63f 50%, #e6ffef 100%);
-			}
 	}
 	form{
 		display: inline-block;
@@ -117,10 +91,9 @@ nav{
 	}
 	.dropdown-menu{
 		left: -55px;
-		max-width: 150px;
+		width: 100px;
 		min-width: 80px;
-		text-align: center;
-		li {
+		li{
 			width: 100%;
 		}
 	}
@@ -172,6 +145,7 @@ nav{
 	}
 }
 
+
 footer.page-footer {
   background-color: $strongGreen;
   color: white;
@@ -206,4 +180,13 @@ footer.page-footer {
 .like-song .fa:hover{
   color: rgb(88, 144, 255);
   cursor: pointer;
+}
+
+.class1 {
+	border-radius: 10%;
+	border: 2px solid #efefef;
+}
+
+.class2 {
+	opacity: 0.5;
 }

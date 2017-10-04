@@ -1,7 +1,7 @@
 <div class="song_index">
   <div class="song_element">
     <div id="song_cover_img">
-      <%= image_tag("default_song", :size => "100x100") %>
+      <%= image_tag("default-song.jpg", :size => "100x100") %>
     </div>
     <div>
       <%= link_to song do %>
@@ -15,11 +15,8 @@
           <span>
 						<%= render "shared/song_avg_rate", rate_avg: song.rate_avg %>
 					</span>
-        </h5>
-      </div>
-      <div class = "like-song">
-        <span class="fa fa-thumbs-o-up"> Like</span>
-      </div>
-    </div>
-  </div>
+				</h5>
+			</div>
+		</div>
+	</div>
 </div>

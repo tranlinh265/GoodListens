@@ -11,15 +11,14 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
+//= require masonry/jquery.masonry
 //= require bootstrap
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require froala_editor.min.js
 
 $(document).on('turbolinks:load', function(){
-    console.log("hello");
-
   $('a.internal_link').on('click', function(event) {
     if (this.hash !== '') {
       event.preventDefault();
@@ -32,21 +31,22 @@ $(document).on('turbolinks:load', function(){
       });
     }
   });
-  //Add review
+
   $( ":button#add_review" ).on( "click", function() {
     $(".review_form").css("display", "block");
   });
+
   $(".close_form").click(function(){
     var curr = $(this).parentsUntil(".review_form").parent(".review_form")
     curr.css("display", "none");
   });
+
   $(".review_form").on('click',function(event) {
-          $(".review_form").css("display", "none");
+     $(".review_form").css("display", "none");
   }).on('click','.review_form_content',function(e){
     e.stopPropagation();
   });
 
-  //Rate
   $('#stars li').on('mouseover', function(){
     var onStar = parseInt($(this).data('value'), 10); 
    
@@ -58,17 +58,14 @@ $(document).on('turbolinks:load', function(){
         $(this).removeClass('hover');
       }
     });
-    
   }).on('mouseout', function(){
     $(this).parent().children('li.star').each(function(e){
       $(this).removeClass('hover');
     });
   });
-  
-  
-  /* 2. Action to perform on click */
+
   $('#stars li').on('click', function(){
-    var onStar = parseInt($(this).data('value'), 10); // The star currently selected
+    var onStar = parseInt($(this).data('value'), 10);
     var stars = $(this).parent().children('li.star');
     
     for (i = 0; i < stars.length; i++) {
@@ -83,5 +80,18 @@ $(document).on('turbolinks:load', function(){
     $('#rate_value').val(ratingValue)
   });
 
+  $('selector').froalaEditor();
 
+  $(function() {
+    $('div#froala-editor').froalaEditor({
+      // Define new image styles.
+      imageStyles: {
+        class1: 'Class 1',
+        class2: 'Class 2'
+      },
+      imageEditButtons: ['imageReplace', 'imageAlign', 'imageRemove', '|',
+        'imageLink', 'linkOpen', 'linkEdit', 'linkRemove', '-', 'imageDisplay',
+        'imageStyle', 'imageAlt', 'imageSize']
+    })
+  });
 });

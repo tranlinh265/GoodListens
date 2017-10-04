@@ -1,34 +1,31 @@
-<div class="review_detail">
-        <div class="review_author">
-                <div id="review_author">
-                <%= image_tag("default-ava/ava-default-male.jpg", class: 'img_author', :size => "50x50")%>
-                <div class="author_details">
-                	<strong><h4>
-                		<%= link_to review.user do %>
-                                        <%= review.user.name %>
-                                 <% end %>
-                	</h4></strong>
-                	<h5>
-                		<%= review.created_at %>
-                        <div class="rating">
-                            <%= render "shared/song_avg_rate", rate_avg: review.rate_score %>
-                        </div>
-                	</h5>
-                </div>
-        	</div>
+<%= link_to song_review_path(song_id: review.song.id,
+  id: review.id), class: "review-link box" do %>
+    <div class="review_detail">
+      <div class="review_author">
+        <div id="review_author">
+          <%= image_tag("default-ava/ava-default-male.jpg",
+            class: 'img_author', :size => "50x50")%>
+          <div class="author_details">
+            <div class="left-block">
+              <div class="author-name">
+                <%= review.user.name %>
+              </div>
+              <div class="rating">
+                <%= render "shared/song_avg_rate", rate_avg: review.rate_score %>
+              </div>
+            </div>
+            <div class="timestamp">
+              <%= time_ago_in_words review.created_at %>  
+            </div>
+          </div>
         </div>
-	<div class="review_articles">
-		<strong><p id = "review_title">
-			<%= review.title %>
-		</p></strong>
-		<p><%= review.content %></p>
-	</div>
-        <div class="action_box">
-                <div>
-                        <span><%= image_tag("icon/like", :size => "15x15")%> Like </span>
-                </div>
-                <div>
-                        <span><%= image_tag("icon/chat", :size => "15x15")%> Comment </span>
-                </div>
-        </div>
-</div>
+      </div>
+      <div class="review_articles">
+        <strong>
+          <p id = "review_title">
+            <%= review.title %>
+        </p></strong>
+        <p><%= review.content %></p>
+      </div>
+    </div>
+<% end %>

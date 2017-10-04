@@ -4,6 +4,9 @@ class UsersController < ApplicationController
   attr_reader :user
 
   def show
+    active_rela = current_user.active_relationships
+    @relationship_build = active_rela.build
+    @relationship_destroy = active_rela.find_by followed_id: @user.id
   end
 
   private

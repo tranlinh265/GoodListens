@@ -1,7 +1,6 @@
-// Place all the styles related to the Songs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-// #81D4FA icon color
+$white: #fff;
+$gray-darker: #ccc;
+
 .song_index {
 	width: 50%;
 	margin-left: 200px;
@@ -25,90 +24,59 @@
 
 
 .song_detail {
-	width: 70%;
-	margin-left: 200px;
+	background-color: $white;
+	width: 80%;
+	margin: 0 auto;
 	margin-top: 20px;
-	padding: 10px;
-	padding-bottom: 20px;
-
-	h4 {
-		margin-left: 15px;
-	}
+	padding: 20px 30px;
+	box-shadow: 1px 1px 1px 1px $gray-darker;
+	border-radius: 3px;
 
 	.song_content {
-	position: relative;
-	margin-left: 175px;
+		align-items: center;
+		display: inline-block;
+		width: 100%;
 	}
 
-	#song_cover_img {
-		position: absolute;
-		left: -175px;
+	.info-section {
+		align-items: center;
+		display: flex;
+		float: left;
+		max-width: 70%;
+
+		.song_info {
+			display: inline-block;
+			float: left;
+			margin-left: 30px;
+		}
+
+		.song_cover_img {
+			display: inline-block;
+			float: left;
+		}
 	}
 }
 
-.review_content {
-	background-color: #eee;
-	margin: 15px;
-	padding: 10px;
-	border-radius: 7px;
+#reviews {
+	margin: 0 auto;
 }
 
 .review_detail {
 	background-color: white;
-	border-radius: 5px;
+	box-shadow: 1px 1px 1px 1px $gray-darker;
+	border-radius: 3px;
+	margin: 0 15px 30px;
 	padding: 10px;
-	margin-bottom: 15px;
+	text-align: left;
+
 	.review_author {
 		border-bottom: 1px solid #EEEEEE;
-		#review_author {
-			position: relative;
-			margin-left: 75px;
-			margin-right: 100px;
-			h5 {
-				padding-left: 10px;
-			}
-
-		}
-		.rating {
-			position: absolute;
-			right: -75px;
-			display: inline;
-		}
-		.img_author {
-			border-radius: 50%;
-			position: absolute;
-			left: -75px;
-		}
 	}
 	.review_articles {
-		margin-top: 20px;
-		margin-left: 30px;
-	}
-	.action_box {
-		margin-top: 10px;
-		margin-left: 30px;
-		color: #757575;
-		div {
-			line-height: 150%;
-			margin-right: 15px;
-			display: inline;
-		}
-		img {	
-				display: inline-block;
-				vertical-align: top;
-				transform: translateZ(0);
-				box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-				backface-visibility: hidden;
-				-moz-osx-font-smoothing: grayscale;
-				transition-duration: 0.3s;
-				transition-property: transform;
-				transition-timing-function: ease-out;
-			}
-		span:hover {
-			color: #4FC3F7;
-			img {
-				transform: translateY(-8px);
-			}
+		margin: 5px;
+
+		p {
+			margin-bottom: 0 !important;
 		}
 	}
 }
@@ -178,10 +146,6 @@
 
 .rate_avg {
 	display:inline-block;
-
-	.fill_star:first-child {
-		margin-left: 20px;
-	}
 	.fill_star > i.fa {
 		color:#ffbf00;
 	}
