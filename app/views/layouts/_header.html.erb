@@ -1,6 +1,6 @@
 <nav>
   <div class="nav-wrapper">
-    <a href="/" class="brand-logo"><%= fa_icon "music" %>  GoodListens</a>
+    <a href="/" class="brand-logo"><%= fa_icon "music" %> / GoodListens</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><%= link_to "Songs", songs_path, :id => is_active?("songs") %></li>
       <% if user_signed_in? %>

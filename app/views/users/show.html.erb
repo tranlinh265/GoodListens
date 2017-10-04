@@ -9,7 +9,12 @@
       <div class="name-express">
         <div class="name"><%= @user.name %></div>
         <div class="config-area">
-          <%= link_to "Edit profile", edit_user_registration_path, id: "edit-profile-btn" %>
+          <% if current_user == @user %>
+            <%= link_to "Edit profile", edit_user_registration_path,
+              id: "edit-profile-btn" %>
+          <% else %>
+            <%= render "follow_form" %>
+          <% end %>
         </div>
       </div>
       <div class="user-info-express">

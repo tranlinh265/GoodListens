@@ -1,0 +1,42 @@
+<div class="wrapper">
+  <div class="review">
+    <div class="brand">
+      <div class="info">
+        <div class="author">
+          <%= @review.song.title %>
+        </div>
+        <div class="song-name">
+          <i><%= @review.song.singer.name %></i>
+        </div>
+      </div>
+      <div class="song-cover-pic">
+        <%= image_tag("default-song.jpg" , :size => "280x280") %>
+      </div>
+      <div class="song-rate">
+        <div class="value">
+          <%= @review.rate_score %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-2 left-block">
+        <div class="contributor">
+          by <strong><%= @review.user.name %></strong>
+        </div>
+        <div class="timestamp">
+          <%= time_ago_in_words @review.updated_at %>
+        </div>
+      </div>
+      <div class="col-xs-9 col-xs-push-1 right-block">
+        <div class="song-des">
+          <%= @review.song.description %>
+        </div>
+        <div class="music-player">
+        </div>
+        <div class="review-content">
+          <%= @review.content %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

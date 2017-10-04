@@ -1,3 +1,219 @@
-// Place all the styles related to the Reviews controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+$gray-lighter: #f7f7f7;
+$gray-darker: #bebebe;
+$gray-more-darker: #999696;
+$white: #fff;
+$black: #000;
+$strongGreen: #3cac94;
+
+.review-link {
+  color: $black;
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+
+  &:hover {
+    color: $black;
+    text-decoration: none;
+  }
+
+  &:focus {
+    color: $black;
+    text-decoration: none;
+  }
+}
+
+.wrapper {
+  display: inline-block;
+  height: 100%;
+  padding-top: 35px;
+  width: 100%;
+}
+
+.box {
+  width: 390px;
+  .review-detail {
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+.review {
+  margin: 0 auto;
+  width: 70%;
+
+  .brand {
+    align-items: center;
+    background-color: $white;
+    display: flex;
+    padding: 25px 5px;
+  }
+
+  .info {
+    color: $strongGreen;
+    display: inline-block;
+    float: left;
+    text-align: center;
+    width: 55%;
+
+    .author {
+      font-size: 2.3em;
+      margin-bottom: 10px;
+    }
+
+    .song-name {
+      font-family: "Libre Baskerville", serif;
+      font-size: 3em;
+      font-weight: bold;
+    }
+  }
+
+  .song-rate {
+    text-align: center;
+    width: calc(45% - 280px);
+
+    .value {
+      border-radius: 50%;
+      border: 5px solid $strongGreen;
+      color: $strongGreen;
+      font-size: 3.2em;
+      font-weight: bold;
+      height: 90px;
+      margin: 0 auto;
+      padding: 10px 15px 15px;
+      width: 90px;
+    }
+  }
+
+  .left-block {
+    padding-top: 35px;
+
+    .contributor {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+    }
+
+    .timestamp {
+      color: $gray-darker;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
+  .right-block {
+    font-size: 1.6em;
+    padding-top: 30px;
+
+    .song-des {
+      font-family: "Poppins", sans-serif;
+      font-size: 1.1em;
+      line-height: 1.8em;
+      margin-bottom: 35px;
+    }
+
+    .review-content {
+      font-family: "Droid Serif", serif;
+      line-height: 1.65em;
+      width: 70%;
+    }
+    
+    .review-content::first-letter {
+      float: left;
+      font-size: 4.8em;
+      line-height: 1.1em;
+      margin: -.15em .08em -.2em 0;
+    }
+  }
+}
+
+.review_author {
+  #review_author {
+    display: inline-block;
+    padding: 5px;
+    width: 100%;
+
+    img {
+      border-radius: 50%;
+      float: left;
+    }
+  }
+
+  .author_details {
+    display: inline-block;
+    float: left;
+    margin-left: 10px;
+    width: calc(100% - 60px);
+
+    .left-block {
+      float: left;
+      width: 85%;
+    }
+
+    .author-name {
+      width: 100%;
+    }
+
+    .rating {
+      width: 100%;
+    }
+
+    .timestamp {
+      color: $gray-more-darker;
+      float: right;
+      text-align: right;
+      width: 15%;
+    }
+  }
+}
+
+.review_content {
+  margin: 0 auto;
+  margin-top: 25px;
+  text-align: center;
+  width: 80%;
+
+  .title {
+    color: $black;
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    position: relative;
+    width: 100%;
+
+    &::before {
+      position: absolute;
+      content: " ";
+      z-index: 3;
+      width: 50%;
+      top: 50%;
+      height: 0%;
+      left: 0;
+      border-top: 1px solid $gray-darker;
+      width: 42%;
+    }
+
+    &::after {
+      position: absolute;
+      content: " ";
+      z-index: 3;
+      width: 50%;
+      top: 50%;
+      height: 0%;
+      right: 0;
+      border-top: 1px solid $gray-darker;
+      width: 42%;
+    }
+  }
+}
+
+.review-section {
+  display: inline-block;
+  height: 100%;
+  float: right;
+  margin-top: 10px;
+}
